@@ -1,6 +1,3 @@
-let humanScore = 0
-let computerScore = 0
-
 function getComputerChoice () {
     choice = Math.floor(Math.random() * 3)
 
@@ -19,68 +16,92 @@ function getComputerChoice () {
 function getHumanChoice() {
     let playerChoice = prompt("Which hand do you wish to play? (Rock, Paper or Scissors)")
 
-    console.log(playerChoice.toLocaleLowerCase())
     return playerChoice.toLocaleLowerCase()
 }
 
-function playRound(humanChoice, computerChoice) {
-    let roundResult = ""
+function playGame() {
+    let humanScore = 0
+    let computerScore = 0
 
-    switch (humanChoice) {
-        case 'rock':
-            switch (computerChoice) {
-                case 'rock':
-                    roundResult = "It's a draw! Both chose Rock."
-                    break
+    function playRound(humanChoice, computerChoice) {
+        let roundResult = ""
 
-                case 'paper':
-                    roundResult = "You lose! Paper beats Rock."
-                    computerScore += 1
-                    break
+        switch (humanChoice) {
+            case 'rock':
+                switch (computerChoice) {
+                    case 'rock':
+                        roundResult = "It's a draw! Both chose Rock."
+                        break
 
-                case 'scissors':
-                    roundResult = "You win! Rock beats Scissors."
-                    humanScore +=1
-                    break
-            }
-            break
-        
-        case 'paper':
-            switch (computerChoice) {
-                case 'rock':
-                    roundResult = "You win! Paper beats Rock."
-                    humanScore +=1
-                    break
-                    
-                case 'paper':
-                    roundResult = "It's a draw! Both chose Paper."
-                    break
+                    case 'paper':
+                        roundResult = "You lose! Paper beats Rock."
+                        computerScore += 1
+                        break
 
-                case 'scissors':
-                    roundResult = "You lose! Scissors beats Paper."
-                    computerScore += 1
-                    break
-            }
-            break
-
-        case 'scissors':
-            switch (computerChoice) {
-                case 'rock':
-                    roundResult = "You lose! Rock beats Scissors."
-                    computerScore += 1
-                    break
-                    
-                case 'paper':
-                    roundResult = "You win! Scissors beats Paper."
-                    humanScore +=1
-                    break
+                    case 'scissors':
+                        roundResult = "You win! Rock beats Scissors."
+                        humanScore +=1
+                        break
+                }
+                break
+            
+            case 'paper':
+                switch (computerChoice) {
+                    case 'rock':
+                        roundResult = "You win! Paper beats Rock."
+                        humanScore +=1
+                        break
                         
-                case 'scissors':
-                    roundResult = "It's a draw! Both chose Scissors."
-                    break
-            }
-            break
+                    case 'paper':
+                        roundResult = "It's a draw! Both chose Paper."
+                        break
+
+                    case 'scissors':
+                        roundResult = "You lose! Scissors beats Paper."
+                        computerScore += 1
+                        break
+                }
+                break
+
+            case 'scissors':
+                switch (computerChoice) {
+                    case 'rock':
+                        roundResult = "You lose! Rock beats Scissors."
+                        computerScore += 1
+                        break
+                        
+                    case 'paper':
+                        roundResult = "You win! Scissors beats Paper."
+                        humanScore +=1
+                        break
+                            
+                    case 'scissors':
+                        roundResult = "It's a draw! Both chose Scissors."
+                        break
+                }
+                break
+        }
+
+        console.log(roundResult)
     }
 
-    console.log(roundResult)
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice()
+        const computerChoice = getComputerChoice()
+
+        playRound(humanChoice, computerChoice)
+    }
+
+    console.log("The final game results are:")
+    console.log("W: " + humanScore + " | D: " + (5 - (computerScore + humanScore)) + " | L: " + computerScore)
+
+    if (humanScore > computerScore) {
+        console.log("You've WON against the machine!")
+    }
+    else if (humanScore < computerScore) {
+        console.log("You've LOST against the machine...")
+    }
+    else {
+        console.log("Its a draw!")
+    }
 }
