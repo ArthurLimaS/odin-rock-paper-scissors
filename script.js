@@ -13,6 +13,11 @@ function getComputerChoice () {
     }
 }
 
+const result = document.querySelector("#result-div")
+
+let humanScore = 0
+let computerScore = 0
+
 function playRound(humanChoice, computerChoice) {
     let roundResult = ""
 
@@ -25,12 +30,12 @@ function playRound(humanChoice, computerChoice) {
 
                 case 'paper':
                     roundResult = "You lose! Paper beats Rock."
-                    // computerScore += 1
+                    computerScore += 1
                     break
 
                 case 'scissors':
                     roundResult = "You win! Rock beats Scissors."
-                    // humanScore +=1
+                    humanScore +=1
                     break
             }
             break
@@ -39,7 +44,7 @@ function playRound(humanChoice, computerChoice) {
             switch (computerChoice) {
                 case 'rock':
                     roundResult = "You win! Paper beats Rock."
-                    // humanScore +=1
+                    humanScore +=1
                     break
                     
                 case 'paper':
@@ -48,7 +53,7 @@ function playRound(humanChoice, computerChoice) {
 
                 case 'scissors':
                     roundResult = "You lose! Scissors beats Paper."
-                    // computerScore += 1
+                    computerScore += 1
                     break
             }
             break
@@ -57,12 +62,12 @@ function playRound(humanChoice, computerChoice) {
             switch (computerChoice) {
                 case 'rock':
                     roundResult = "You lose! Rock beats Scissors."
-                    // computerScore += 1
+                    computerScore += 1
                     break
                     
                 case 'paper':
                     roundResult = "You win! Scissors beats Paper."
-                    // humanScore +=1
+                    humanScore +=1
                     break
                         
                 case 'scissors':
@@ -72,7 +77,7 @@ function playRound(humanChoice, computerChoice) {
             break
     }
 
-    console.log(roundResult)
+    result.textContent = roundResult
 }
 
 const btns = document.querySelectorAll("button")
