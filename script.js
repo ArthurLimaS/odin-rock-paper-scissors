@@ -16,7 +16,9 @@ function getComputerChoice () {
 const result = document.querySelector("#result-div")
 
 let humanScore = 0
+const humanScoreElement = document.querySelector("#human-score")
 let computerScore = 0
+const computerScoreElement = document.querySelector("#computer-score")
 
 function playRound(humanChoice, computerChoice) {
     let roundResult = ""
@@ -85,6 +87,8 @@ const btns = document.querySelectorAll("button")
 btns.forEach((btn) => {
     btn.addEventListener("click", () => {
         playRound(btn.textContent.toLowerCase(), getComputerChoice())
+        humanScoreElement.textContent = humanScore
+        computerScoreElement.textContent = computerScore
     })
 })
 
