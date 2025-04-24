@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 h1 {
@@ -14,5 +15,20 @@ h1 {
 }
 
 .score {
+    text-align: center;
+}
+
+#choice-bar {
+    display: flex;
+
+    justify-content: center;
+    gap: 10px;
+
+    /* padding: 10px; */
+
+    background-color: blue;
+}
+
+#result-div {
     text-align: center;
 }
