@@ -13,7 +13,7 @@ function getComputerChoice () {
     }
 }
 
-const result = document.querySelector("#result-div")
+const result = document.querySelector("#result")
 
 let humanScore = 0
 const humanScoreElement = document.querySelector("#human-score")
@@ -87,10 +87,21 @@ const btns = document.querySelectorAll("button")
 btns.forEach((btn) => {
     btn.addEventListener("click", () => {
         playRound(btn.textContent.toLowerCase(), getComputerChoice())
+        
         humanScoreElement.textContent = humanScore
         computerScoreElement.textContent = computerScore
+
+        if (humanScore >= 5) {
+            alert("Você VENCEU!")
+        }
+
+        if (computerScore >= 5) {
+            alert("Você PERDEU!")
+        }
     })
 })
+
+
 
 function getHumanChoice() {
     let playerChoice = prompt("Which hand do you wish to play? (Rock, Paper or Scissors)")
