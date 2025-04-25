@@ -13,7 +13,7 @@ function getComputerChoice () {
     }
 }
 
-const result = document.querySelector("#result")
+const result = document.querySelector("#match-result")
 
 let humanScore = 0
 const humanScoreElement = document.querySelector("#human-score")
@@ -86,8 +86,21 @@ const btns = document.querySelectorAll("button")
 
 btns.forEach((btn) => {
     btn.addEventListener("click", () => {
-        playRound(btn.textContent.toLowerCase(), getComputerChoice())
-        
+        let playerChoice
+
+        if (btn.id == "rock-btn") {
+            playerChoice = "rock"
+        } else if (btn.id == "paper-btn") {
+            playerChoice = "paper"
+        } else if (btn.id == "scissors-btn") {
+            playerChoice = "scissors"
+        }
+
+
+        let computerChoice = getComputerChoice()
+
+        playRound(playerChoice, computerChoice)
+
         humanScoreElement.textContent = humanScore
         computerScoreElement.textContent = computerScore
 
@@ -100,36 +113,3 @@ btns.forEach((btn) => {
         }
     })
 })
-
-
-
-function getHumanChoice() {
-    let playerChoice = prompt("Which hand do you wish to play? (Rock, Paper or Scissors)")
-
-    return playerChoice.toLocaleLowerCase()
-}
-
-// function playGame() {
-//     let humanScore = 0
-//     let computerScore = 0
-
-//     for (let i = 0; i < 5; i++) {
-//         const humanChoice = getHumanChoice()
-//         const computerChoice = getComputerChoice()
-
-//         playRound(humanChoice, computerChoice)
-//     }
-
-//     console.log("The final game results are:")
-//     console.log("W: " + humanScore + " | D: " + (5 - (computerScore + humanScore)) + " | L: " + computerScore)
-
-//     if (humanScore > computerScore) {
-//         console.log("You've WON against the machine!")
-//     }
-//     else if (humanScore < computerScore) {
-//         console.log("You've LOST against the machine...")
-//     }
-//     else {
-//         console.log("Its a draw!")
-//     }
-// }
