@@ -83,6 +83,21 @@ function playRound(humanChoice, computerChoice) {
 }
 
 const btns = document.querySelectorAll("button")
+const playerChoiceElement = document.querySelector("#player-choice")
+const computerChoiceElement = document.querySelector("#computer-choice")
+
+function changeImage(element, choice) {
+    if (choice == "rock") {
+        element.src = "./images/rock.png"
+        element.alt = "A fist that can smash metal blades, like scissors easily."
+    } else if (choice == "paper") {
+        element.src = "./images/paper.png"
+        element.alt = "A palm that can cover stones but vulnerable to small blades."
+    } else if (choice == "scissors") {
+        element.src = "./images/scissors.png"
+        element.alt = "Ready to tear a paper apart during a shifumi tournament but is vulnerable to rocks."
+    }
+}
 
 btns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -96,10 +111,12 @@ btns.forEach((btn) => {
             playerChoice = "scissors"
         }
 
-
         let computerChoice = getComputerChoice()
 
         playRound(playerChoice, computerChoice)
+
+        changeImage(playerChoiceElement, playerChoice)
+        changeImage(computerChoiceElement, computerChoice)
 
         humanScoreElement.textContent = humanScore
         computerScoreElement.textContent = computerScore
