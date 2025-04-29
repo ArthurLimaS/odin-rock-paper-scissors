@@ -1,3 +1,26 @@
+//// DOM ELEMENTS
+
+// SCORE BAR
+const humanScoreElement = document.querySelector("#player-score")
+const computerScoreElement = document.querySelector("#computer-score")
+
+// MATCH AREA
+const matchResult = document.querySelector("#match-result")
+const playerChoiceElement = document.querySelector("#player-choice")
+const computerChoiceElement = document.querySelector("#computer-choice")
+
+// CHOICE AREA
+const game_btns = document.querySelectorAll(".game-button")
+
+// MODAL
+const modal = document.querySelector("#modal")
+const replay_btn = document.querySelector(".replay-btn")
+const gameResult = document.querySelector("#game-result")
+
+// OTHER VARIABLES
+let humanScore = 0
+let computerScore = 0
+
 function getComputerChoice () {
     choice = Math.floor(Math.random() * 3)
 
@@ -12,13 +35,6 @@ function getComputerChoice () {
             return 'scissors'
     }
 }
-
-const result = document.querySelector("#match-result")
-
-let humanScore = 0
-const humanScoreElement = document.querySelector("#player-score")
-let computerScore = 0
-const computerScoreElement = document.querySelector("#computer-score")
 
 function playRound(humanChoice, computerChoice) {
     let roundResult = ""
@@ -79,12 +95,8 @@ function playRound(humanChoice, computerChoice) {
             break
     }
 
-    result.textContent = roundResult
+    matchResult.textContent = roundResult
 }
-
-const btns = document.querySelectorAll("button")
-const playerChoiceElement = document.querySelector("#player-choice")
-const computerChoiceElement = document.querySelector("#computer-choice")
 
 function changeImage(element, choice) {
     if (choice == "rock") {
@@ -96,10 +108,18 @@ function changeImage(element, choice) {
     } else if (choice == "scissors") {
         element.src = "./images/scissors_circle.png"
         element.alt = "Ready to tear a paper apart during a shifumi tournament but is vulnerable to rocks."
+    } else if (choice == "q") {
+        element.src = "./images/question_mark.png"
+        element.alt = "a question mark"
+    } else if (choice == "qr") {
+        element.src = "./images/question_mark_reversed.png"
+        element.alt = "a question mark"
     }
 }
 
-btns.forEach((btn) => {
+// EVENT LISTENERS
+
+game_btns.forEach((btn) => {
     btn.addEventListener("click", () => {
         let playerChoice
 
@@ -122,11 +142,23 @@ btns.forEach((btn) => {
         computerScoreElement.textContent = computerScore
 
         if (humanScore >= 5) {
-            alert("Você VENCEU!")
+            modal.style.display = "block"
+            gameResult.textContent = "You WIN!"
         }
 
         if (computerScore >= 5) {
-            alert("Você PERDEU!")
+            modal.style.display = "block"
+            gameResult.textContent = "You LOSE!"
         }
     })
+})
+
+replay_btn.addEventListener("click", () => {
+    humanScore = 0
+    computerScore = 0
+
+    changeImage(playerChoiceElement, "q")
+    changeImage(computerChoiceElement, "qr")
+
+    modal.style.display = "none"
 })
