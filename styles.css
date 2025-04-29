@@ -3,9 +3,30 @@
     /* border: 1px solid red; */
 }
 
-h1, h2 {
+body {
+    margin: 0;
+
+    background-color: #61779a;
+}
+
+.header {
+    padding: 20px 0px;
+
+    background-color: #293d5a;
+}
+
+h1 {
+    margin: 0;
+
+    text-align: center;
+    color: white;
+}
+
+h2 {
     text-align: center;
 }
+
+/* SCORE BAR */
 
 #score-bar {
     display: flex;
@@ -17,20 +38,25 @@ h1, h2 {
 .score {
     width: 100px;
     height: 100px;
+    border-radius: 10px;
 
     display: flex;
     
     flex-direction: column;
     justify-content: center;
     
-    background-color: cyan;
+    background-color: #2b506e;
 
     text-align: center;
 }
 
 .score h3 {
     margin: 0;
+
+    color: white;
 }
+
+/* MATCH AREA */
 
 #match-area {
     margin-bottom: 16px;
@@ -70,6 +96,8 @@ h1, h2 {
     transform: scaleX(-1);
 }
 
+/* CHOICE BAR */
+
 #choice-bar {
     display: flex;
 
@@ -79,4 +107,9 @@ h1, h2 {
     /* padding: 10px; */
 
     /* background-color: blue; */
+}
+
+button {
+    /* background-color: #4a6987; */
+    /* background-color: #316798; */
 }

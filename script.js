@@ -16,7 +16,7 @@ function getComputerChoice () {
 const result = document.querySelector("#match-result")
 
 let humanScore = 0
-const humanScoreElement = document.querySelector("#human-score")
+const humanScoreElement = document.querySelector("#player-score")
 let computerScore = 0
 const computerScoreElement = document.querySelector("#computer-score")
 

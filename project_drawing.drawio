@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.2.14">
+  <diagram name="Página-1" id="s1FUn9t1Y_yoZsnaSpXY">
+    <mxGraphModel dx="2002" dy="2352" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BLTRLuh10GCsn20jFkO5-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-818" y="-1160" width="810" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BLTRLuh10GCsn20jFkO5-2" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;Rock, Paper, Scissors&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-598" y="-1120" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BLTRLuh10GCsn20jFkO5-3" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;The winner of the game its the first to 5 points!&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-663" y="-1000" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BLTRLuh10GCsn20jFkO5-5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Human Score&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;0&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-600" y="-930" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="BLTRLuh10GCsn20jFkO5-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Computer Score&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;0&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="-930" width="100" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
