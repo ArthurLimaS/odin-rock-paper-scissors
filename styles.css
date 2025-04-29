@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-    padding: 20px 0px;
+    padding: 20px 10px;
 
     background-color: #293d5a;
 }
@@ -18,11 +18,15 @@ body {
 h1 {
     margin: 0;
 
-    text-align: center;
     color: white;
+    font-size: min(57.6px, 10vw);
+    text-align: center;
 }
 
 h2 {
+    margin: 19.92px 10px;
+
+    font-size: min(30.4px, 7.5vw);
     text-align: center;
 }
 
@@ -32,12 +36,12 @@ h2 {
     display: flex;
 
     justify-content: center;
-    gap: 80px;
+    gap: min(128px, 25vw);
 }
 
 .score {
-    width: 100px;
-    height: 100px;
+    width: min(160px, 31.25vw);
+    height: min(160px, 31.25vw);
     border-radius: 10px;
 
     display: flex;
@@ -54,6 +58,7 @@ h2 {
     margin: 0;
 
     color: white;
+    font-size: min(30px, 5.85vw);
 }
 
 /* MATCH AREA */
@@ -68,12 +73,9 @@ h2 {
 }
 
 #match-result {
-    min-height: 18px;
-
-    text-align: center;
-
-    /* LEMBRAR DISSO */
+    font-size: min(25.6px, 5vw);
     font-weight: bold;
+    text-align: center;
 }
 
 #displays-area {
@@ -81,7 +83,11 @@ h2 {
 
     align-items: center;
 
-    gap: 15px
+    gap: min(25.6px, 5vw);
+}
+
+#displays-area p {
+    font-size: min(25.6px, 5vw);
 }
 
 .display {
@@ -89,6 +95,11 @@ h2 {
 
     flex-direction: column;
     align-items: center;
+}
+
+.display img {
+    width: min(113px, 21.875vw);
+    height: auto;
 }
 
 .display p {
@@ -107,13 +118,17 @@ h2 {
     display: flex;
 
     justify-content: center;
-    gap: 10px;
-
-    /* padding: 10px; */
-
-    /* background-color: blue; */
+    gap: min(32px, 3.125vw);
 }
 
 button {
+    height: auto;
+    border-radius: 7px;
+
     background-color: #486582;
+}
+
+button img {
+    width: min(128px, 25vw);
+    height: auto;
 }
