@@ -128,7 +128,60 @@ button {
     background-color: #486582;
 }
 
+button:hover,
+button:focus {
+    background-color: #547799;
+
+    cursor: pointer;
+}
+
 button img {
     width: min(128px, 25vw);
     height: auto;
+}
+
+/* MODAL */
+
+#modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    display: none;
+
+    overflow: auto;
+
+    background-color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#modal-content {
+    width: min(280px, 50vw);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: min(30px, 5.5vw) 0;
+    margin: 30vh auto;
+
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #42608f;
+}
+
+#modal-content h2 {
+    margin-top: 0;
+
+    font-size: min(30.4px, 7.5vw);
+}
+
+.replay-btn {
+    padding: 5px;
+
+    font-size: min(25.6px, 5vw);
 }

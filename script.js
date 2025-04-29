@@ -157,6 +157,9 @@ replay_btn.addEventListener("click", () => {
     humanScore = 0
     computerScore = 0
 
+    humanScoreElement.textContent = humanScore
+    computerScoreElement.textContent = computerScore
+
     changeImage(playerChoiceElement, "q")
     changeImage(computerChoiceElement, "qr")
 
