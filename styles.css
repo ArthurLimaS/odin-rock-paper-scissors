@@ -71,6 +71,9 @@ h2 {
     min-height: 18px;
 
     text-align: center;
+
+    /* LEMBRAR DISSO */
+    font-weight: bold;
 }
 
 #displays-area {
@@ -90,6 +93,8 @@ h2 {
 
 .display p {
     margin: 3px 0px;
+
+    font-weight: bold;
 }
 
 .reversed {
@@ -110,6 +115,5 @@ h2 {
 }
 
 button {
-    /* background-color: #4a6987; */
-    /* background-color: #316798; */
+    background-color: #507091;
 }
